@@ -1,1 +1,2 @@
-# AppVeyorResearch
+“I am Arnau Gallofré <https://www.linkedin.com/in/arnau-gallofr%C3%A9-649785180/>, student of the <https://www.citm.upc.edu/ing/estudis/graus-videojocs/> (Bachelor’s Degree in Video Games by UPC at CITM).
+ This content is generated for the second year’s subject Project 2, under supervision of lecturer Ricard Pillosu <https://es.linkedin.com/in/ricardpillosu>.”
