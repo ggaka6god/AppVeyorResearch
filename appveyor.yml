@@ -16,4 +16,5 @@ deploy:
   description: Auto Generated Release
   auth_token:
     secure: BICQJFul94vUXXIGNBf3R2p0GCjH6V45yVyqqtlZqME2H8kQxgpDqytmlnJkKx7k
-draft: true
+
+
