@@ -1,12 +1,1 @@
-﻿  j1Main.cpp
-  j1App.cpp
-  j1Audio.cpp
-  j1Input.cpp
-  j1Scene.cpp
-  p2Log.cpp
-  j1Render.cpp
-  j1Textures.cpp
-  j1Window.cpp
-  pugixml.cpp
-  Generating Code...
-  Motor2D.vcxproj -> C:\Users\arnaugg1\Documents\GitHub\AppVeyorResearch\Files\Debug\Motor 2D.exe
+﻿  Motor2D.vcxproj -> C:\Users\arnaugg1\Documents\GitHub\AppVeyorResearch\Files\Debug\Motor 2D.exe
