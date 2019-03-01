@@ -1,1 +1,2 @@
-﻿  Motor2D.vcxproj -> C:\Users\arnaugg1\Documents\GitHub\AppVeyorResearch\Files\Debug\Motor 2D.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Motor 2D.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Motor2D.vcxproj -> C:\Users\arnaugg1\Documents\GitHub\AppVeyorResearch\Files\Debug\Motor2D.exe
