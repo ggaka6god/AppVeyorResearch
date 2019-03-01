@@ -10,7 +10,6 @@ before_package:
 artifacts:
 - path: Files\Game
   name: files
-  type: WebDeployPackage
 deploy:
 - provider: GitHub
   description: Auto Generated Release
