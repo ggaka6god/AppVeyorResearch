@@ -8,7 +8,7 @@ build:
 before_package:
 - ps: Copy-Item C:\projects\AppVeyorResearch\Files\$env:CONFIGURATION\Motor2D.exe C:\projects\AppVeyorResearch\Game\.
 artifacts:
-- path: Game
+- path: Files\Game
   name: files
   type: WebDeployPackage
 deploy:
