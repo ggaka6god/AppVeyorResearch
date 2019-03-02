@@ -4,7 +4,7 @@ configuration:
 - Debug
 - Release
 before_build:
-- ps: Copy-Item C:\projects\AppVeyorResearch\$env:CONFIGURATION\Motor2D.exe C:\projects\AppVeyorResearch\Files\Game\.
+- ps: Copy-Item C:\projects\AppVeyorResearch\Files\$env:CONFIGURATION\Motor2D.exe C:\projects\AppVeyorResearch\Files\Game\.
 build:
   verbosity: minimal
 artifacts:
