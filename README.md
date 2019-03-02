@@ -1,5 +1,5 @@
-“I am Arnau Gallofré <https://www.linkedin.com/in/arnau-gallofr%C3%A9-649785180/>, student of the <https://www.citm.upc.edu/ing/estudis/graus-videojocs/> (Bachelor’s Degree in Video Games by UPC at CITM).
- This content is generated for the second year’s subject Project 2, under supervision of lecturer Ricard Pillosu <https://es.linkedin.com/in/ricardpillosu>.”
+﻿“I am [Arnau Gallofré](https://www.linkedin.com/in/arnau-gallofr%C3%A9-649785180/), student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/).
+ This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu] (https://es.linkedin.com/in/ricardpillosu/).”
 
 Introducing AppVeyor
 In the development of video games, every time a feature is added to the game in progress, it has to be tested to look for bugs or design issues, to do it correctly, the developers should upload a release with the new feature added to GitHub, and then the QA of the team will check for these errors. So in order to save time and not to make every time a built for the release manually, it’s recommended the usage of the free application AppVeyor. We will focus on how to use AppVeyor, but there are other similar applications that share the same results, like Jenkins or Travis CI.
