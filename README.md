@@ -1,40 +1,24 @@
 ﻿“I am [Arnau Gallofré](https://www.linkedin.com/in/arnau-gallofr%C3%A9-649785180/), student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://es.linkedin.com/in/ricardpillosu/).”
 
-Introducing AppVeyor
-In the development of video games, every time a feature is added to the game in progress, it has to be tested to look for bugs or design issues, to do it correctly, the developers should upload a release with the new feature added to GitHub, and then the QA of the team will check for these errors. So in order to save time and not to make every time a built for the release manually, it’s recommended the usage of the free application AppVeyor. We will focus on how to use AppVeyor, but there are other similar applications that share the same results, like Jenkins or Travis CI.
+## About Appveyor
 
-AppVeyor, every time a commit is done to the code, it automatically uploads the build with all the needed artifacts to the Release page of GitHub giving you feedback of how the build has been done.
+When you are developing a videogame in a team, you are constantly adding content to the project, and in order to test it quickly and saving a lot of time doing manually releases, on 12 November 2014 Microsoft created a powerful tool called AppVeyor, an online app that does the releases for you automatically. There are other apps that does the same, like Travis, but we will focus on AppVeyor.
 
-So, in this article we will talk about how to configure AppVeyor to do automatically builds to GitHub. Following this guide step by step we will understand how AppVeyor works and how to configure it to obtain our desired results.
+So, if you want automatic builds for your project, follow the steps below:
 
-I recommend this guide of How AppVeyor works to understand the internal processes that it does. Even it is not necessary to understand the process we will make in this article.
+## Sign-Up:
 
-Let's start with the Tutorial:
-Starting with AppVeyor
-● To begin with, we will need to create an account on AppVeyor using our GitHub account.
+This part is quite easy if you already have an Github account. Remember to select the FREE plan account. Then, just use your Github username and password. [Sign-Up Here](https://ci.appveyor.com/signup).
 
-● Then, we will need to authorize it. If the GitHub repository to apply it is from an organization, it will require the authorization of the organization's owner. So it’s recommended to be done by the owner himself.
+Now that we have both accounts synchronized, we will need to create a new AppVeyor project selecting the repository we want to have. But if we do a commit, we will have errors and the build will fail. This is because the configuration of the project is wrong. But don't worry, we will fix it right now.
 
-hi
 
-● Once we have synchronized both applications, we can go on with AppVeyor creating a new project and selecting the GitHub repository which we want to have automated builds.
 
-● Now we have our project in AppVeyor, by default every time we make a commit, it will try to make a built, but it probably fails due to the app configuration is not the correct. So the next step is how to configure it.
+## Configuration:
 
-Configuring AppVeyor
-First of all you need to know that there are two ways to configure an AppVeyor project. The first one it is found in the project itself, in the Settings section; there, there is an interface to help you configure the whole project.
+The key of AppVeyor is the file that you create when you finish the configuration. This file is called appveyor.yml and is the file that AppVeyor will read every time you do a commit. You can fill this file manually (Bad idea), or export it from AppVeyor once you have all set up (Great idea). Once you have this file, you only have to put it in the main folder of your repository, eith the readme and the licenses.
 
-hi
-
-The second one is creating in your Github repository a YAML file named appveyor.yml where is found the same configuration but in YAML format.
-
-hi
-
-I highly recommend first of all configure your project from AppVeyor project, in the Settings, and then export this changes into an appveyor.yml and added into your GitHub repository. So you can change any setting from the repository.
-
-It’s needed to remark that AppVeyor will give preference to the YAML file before the project settings. So be careful on that.
-
-Here you can check the full documentation of all the possible settings that the project has.
+Let's start with the General section. Here you can set up the build version and in which branch you want to make the build,  
 
 But in this article we will focus on the basic settings to complete our objective, that is automated builds. The project settings is divided in different sections, the main one is General. There, the most relevant option is that you can configure the Build version format, that will increase every time a built is done (regardless of if it fails). Another useful setting is that you can select from which branch you want to make the built every time a commit is done, in Default branch and Branches to build.
 
