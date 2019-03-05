@@ -70,7 +70,7 @@ Once we have our token ready, we need to encrypt it. You can do it [here](https:
 
 Ok, now that we have the token on our project, AppVeyor can access to our repository. So let's begin with the last step. Now we need to move the executable that creates Visual Studio when you compile the code in the Release or Debug folder into the Game folder. We can achieve that by going to the Build section again. At the bottom, there's a option that says "Before packaging script", and by now is OFF. Let's put it in PS mode(PowerShell) and let's introduce the following line:
 
-**Copy-Item C:\projects\(your-project-name)\$env:CONFIGURATION\(your-solution-name).exe C:\projects\(your-project-name)\Game\**.
+Copy-Item C:\projects\(your-project-name)\$env:CONFIGURATION\(your-solution-name).exe C:\projects\(your-project-name)\Game\
 
 <img src="Assets/ss19.jpg" alt="hi" class="inline">
 
