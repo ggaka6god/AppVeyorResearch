@@ -10,7 +10,7 @@ So, if you want automatic builds for your project, follow the steps below:
 
 This part is quite easy if you already have an Github account. Remember to select the FREE plan account. Then, just use your Github username and password. [Sign-Up Here](https://ci.appveyor.com/signup).
 
-<img src="Assets/ss1.jpg" alt="hi" class="inline">
+<img src="Assets/ss1.png" alt="hi" class="inline">
 
 Now that we have both accounts synchronized, we will need to create a new AppVeyor project selecting the repository we want to have. But if we do a commit, we will have errors and the build will fail. This is because the configuration of the project is wrong. But don't worry, we will fix it right now.
 
