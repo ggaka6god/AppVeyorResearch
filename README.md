@@ -18,11 +18,11 @@ Now that we have both accounts synchronized, we will need to create a new AppVey
 
 The key of AppVeyor is the file that you create when you finish the configuration. This file is called appveyor.yml and is the file that AppVeyor will read every time you do a commit. You can fill this file manually (Bad idea), or export it from AppVeyor once you have all set up (Great idea). Once you have this file, you only have to put it in the main folder of your repository, eith the readme and the licenses.
 
-Let's start with the General section. Here you can set up the build version and in which branch you want to make the build,  
+Before entering into the settings, let's add our repo to AppVeyor
 
-But in this article we will focus on the basic settings to complete our objective, that is automated builds. The project settings is divided in different sections, the main one is General. There, the most relevant option is that you can configure the Build version format, that will increase every time a built is done (regardless of if it fails). Another useful setting is that you can select from which branch you want to make the built every time a commit is done, in Default branch and Branches to build.
+Once done, let's start with the General section. Here you can set up the build version and in which branch you want to make the build, even though there are another settings. **REMEMBER TO ALWAYS GO TO THE BOTTOM OF THE SECTION AND CLICK ON THE SAVE BUTTON. IF NOT, THE CHANGES WILL NOT APPLY**.
 
-hi
+The next section is Environment, where you have to select the version of Visual Studio that you are using.
 
 The next important setting is found in Environment where you have to select which Visual Studio version are you using.
 
