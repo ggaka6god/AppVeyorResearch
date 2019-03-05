@@ -10,7 +10,7 @@ So, if you want automatic builds for your project, follow the steps below:
 
 This part is quite easy if you already have an Github account. Remember to select the FREE plan account. Then, just use your Github username and password. [Sign-Up Here](https://ci.appveyor.com/signup).
 
-<img src="Assets/ss1.png" alt="hi" class="inline">
+<img src="Assets/ss1.jpg" alt="hi" class="inline">
 
 Now that we have both accounts synchronized, we will need to create a new AppVeyor project selecting the repository we want to have. But if we do a commit, we will have errors and the build will fail. This is because the configuration of the project is wrong. But don't worry, we will fix it right now.
 
@@ -21,6 +21,8 @@ Now that we have both accounts synchronized, we will need to create a new AppVey
 ## Configuration:
 
 The key of AppVeyor is the file that you create when you finish the configuration. This file is called **appveyor.yml** and is the file that AppVeyor will read every time you do a commit. You can fill this file manually (Bad idea), or export it from AppVeyor once you have all set up (Great idea). Once you have this file, you only have to put it in the main folder of your repository, with the README and the licenses.
+
+Ok, this is the main page of our project. For now let's go to the settings tab.
 
 <img src="Assets/ss4.jpg" alt="hi" class="inline">
 
@@ -72,8 +74,14 @@ Ok, now that we have the token on our project, AppVeyor can access to our reposi
 
 <img src="Assets/ss19.jpg" alt="hi" class="inline">
 
-With this, we have all set up to have automated builds in our project.
+With this, we have all set up to have automated builds in our project. 
+
+But if you remember, there's a file called appveyor.yml that we had to put in our repository. It's very easy. We only have to go to the Export YAML section and click on "Download appveyor.yml". Put this file in your repo and that's all. The best part of these is that you can edit the configuration from the yml file directly like if it was an xml.
+
+<img src="Assets/ss21.jpg" alt="hi" class="inline">
 
 In addition, we have the Notification section, where you can select the channel you want to recieve when a build is done and if it's correct or not.
 
 <img src="Assets/ss20.jpg" alt="hi" class="inline">
+
+
