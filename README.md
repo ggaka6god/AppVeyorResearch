@@ -32,7 +32,7 @@ The next section is Environment, where you have to select the version of Visual 
 
 <img src="Assets/ss6.jpg" alt="hi" class="inline">
 
-Let's continue with the Build section, where you will have to click on the "Project default" button below Configuration. You will need to type Debug and Release, because you want AppVeyor to do it for both configurations.
+Let's continue with the Build section, where you will have to click on the "Project default" below Configuration. You will need to type Debug and Release, because you want AppVeyor to do it task for both configurations.
 
 <img src="Assets/ss7.jpg" alt="hi" class="inline">
 
@@ -40,63 +40,40 @@ Let's continue with the Build section, where you will have to click on the "Proj
 
 In the next section, Artifacts, you will need to add a new artifact, that is the file of the release. Is for what we are here now. So AppVeyor will ask you for 3 things: The path to the Game folder, the name of the artifact and the type. The first one is up to your project, so, write it down under your responsability. The name of the artifact can be whatever you want, the release zip file will have this name. On the type put "Web Deploy Package".
 
+<img src="Assets/ss9.jpg" alt="hi" class="inline">
 
+<img src="Assets/ss10.jpg" alt="hi" class="inline">
 
-Another relevant option is that one that uploads the build done to our GitHub releases page. It is found in Deployment and is need to change the deployment provider to GitHub Releases. It is recommended to add a Release description and mark the Draft Release to avoid having all the releases you made there. But before all of that is needed an authentication from GitHub to let AppVeyor modify our repository. It is done through a GitHub authentication token.
+<img src="Assets/ss11.jpg" alt="hi" class="inline">
 
-hi
+To have our release in our Github repository we will need to go to the Deployment section. First we need to change the deployment provider to Github Releases. Then I recommend to add a little description like "AutoRelease", and mark the "Draft Release" button. 
 
-We will make a parenthesis to show how to get it:
+<img src="Assets/ss12.jpg" alt="hi" class="inline">
 
-How to get your GitHub authentication token
-First of all, it’s important to say that an authentication token is like a password, so manage them like that. The difference is that it is used for scripts or commands, and in addition you can revoke them and generate lots of them. So, to generate one of them you need to go Here or manually going to your GitHub, and go to Settings (the general settings, not the repository ones). There is a section Developer Settings with a subsection Personal Access Tokens.
+<img src="Assets/ss13.jpg" alt="hi" class="inline">
 
-hi
+Last but not least, we need the Github authentication token, which we will find it in the Github settings (Not the repository settings, in our account settings, in Developer settings). 
 
-There you need to Generate a new token and just select the scope public_repo and then Generate it.
+<img src="Assets/ss14.jpg" alt="hi" class="inline">
 
-hi
+<img src="Assets/ss15.jpg" alt="hi" class="inline">
 
-Once done the token has to be copied to Here to encrypt it, the result is an encrypted token that has to be copied to the GitHub authentication token in the Deployment setting that we were talking before.
+<img src="Assets/ss16.jpg" alt="hi" class="inline">
 
-Back to AppVeyor
-At this point AppVeyor is capable to access to the Release GitHub page.
+Once we have our token ready, we need to encrypt it. You can do it [here](https://ci.appveyor.com/tools/encrypt).
 
-So our objective is to make AppVeyor do automated builds from our GitHub repository, but we need to remind which items a build should have:
+<img src="Assets/ss17.jpg" alt="hi" class="inline">
 
-A README.md file
-A folder with all the Assets of the game and the libraries .dll
-The executable of the game .exe
-It is recommended putting together in a folder the ReadMe, the assets and the libraries to make the process easily. In all the explanation we will refer to this folder as \Game.
+<img src="Assets/ss18.jpg" alt="hi" class="inline">
 
-So we need to upload this Game folder together with the executable of the game, that will be given by AppVeyor once it has made the Release. To do it we need to go again to the project Settings. Firstly we need to go to Build section and fill the Configuration option with Debug and Release. We put both, to check that there’s no problem compiling the code in Debug nor Release mode. Then, as we said before, we need to get the executable given after the AppVeyor does the Release to our code. So in Before packaging script we need to insert a script in PS (PowerShell) language which will copy this executable to the Game folder, to have it all together.
+Ok, now that we have the token on our project, AppVeyor can access to our repository. So let's begin with the last step. Now we need to move the executable that creates Visual Studio when you compile the code in the Release or Debug folder into the Game folder. We can achieve that by going to the Build section again. At the bottom, there's a option that says "Before packaging script", and by now is OFF. Let's put it in PS mode(PowerShell) and let's introduce the following line:
 
-The script is the following:
+**Copy-Item C:\projects\(your-project-name)\$env:CONFIGURATION\(your-solution-name).exe C:\projects\(your-project-name)\Game\**.
 
-Copy-Item C:\projects\(your_project_name)\$env:CONFIGURATION\(your_solution_name).exe C:\projects\(your_project_name)\Game\.
-"Where the directory to copy is the solution of your Debug/Release, and the directory to paste it is your Game carpet"
+<img src="Assets/ss19.jpg" alt="hi" class="inline">
 
-"($env:CONFIGURATION): refers to Debug or Release folder"
+With this, we have all set up to have automated builds in our project.
 
-Below we have an example
+In addition, we have the Notification section, where you can select the channel you want to recieve when a build is done and if it's correct or not.
 
-hi
-
-So now, after it is done the Release to our code, the folder Game will contain all that a correct built needs. So the last step is to upload this folder to our GitHub Release page. It is configured in the section Artifacts where we need to put the path to the folder Game, with a name for the release and selected the Web Deploy Package type.
-
-hi
-
-If the steps are followed correctly the build should be uploaded to Release page as a draft every time a commit is done in the project. I recommend, as we said before, to export all the configuration to YAML format and upload to the repository to allow the modification directly from GitHub.
-
-hi
-
-Another useful feature that AppVeyor provides is Notification, every time a built is done it will notificate it through the channels that you prefer, the most common are Email, Slack.. There, you can select when it has to notificates you. Whether the built has been upload successfully or it failed, or both.
-
-hi
-
-Links to more documentation
-Official AppVeyor Tutorial
-
-Documentation of the configuration of AppVeyor
-
-How AppVeyor works
+<img src="Assets/ss20.jpg" alt="hi" class="inline">
