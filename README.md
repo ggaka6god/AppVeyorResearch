@@ -10,23 +10,37 @@ So, if you want automatic builds for your project, follow the steps below:
 
 This part is quite easy if you already have an Github account. Remember to select the FREE plan account. Then, just use your Github username and password. [Sign-Up Here](https://ci.appveyor.com/signup).
 
+<img src="Assets/ss1.jpg" alt="hi" class="inline">
+
 Now that we have both accounts synchronized, we will need to create a new AppVeyor project selecting the repository we want to have. But if we do a commit, we will have errors and the build will fail. This is because the configuration of the project is wrong. But don't worry, we will fix it right now.
 
+<img src="Assets/ss2.jpg" alt="hi" class="inline">
 
+<img src="Assets/ss3.jpg" alt="hi" class="inline">
 
 ## Configuration:
 
-The key of AppVeyor is the file that you create when you finish the configuration. This file is called appveyor.yml and is the file that AppVeyor will read every time you do a commit. You can fill this file manually (Bad idea), or export it from AppVeyor once you have all set up (Great idea). Once you have this file, you only have to put it in the main folder of your repository, eith the readme and the licenses.
+The key of AppVeyor is the file that you create when you finish the configuration. This file is called **appveyor.yml** and is the file that AppVeyor will read every time you do a commit. You can fill this file manually (Bad idea), or export it from AppVeyor once you have all set up (Great idea). Once you have this file, you only have to put it in the main folder of your repository, with the README and the licenses.
 
-Before entering into the settings, let's add our repo to AppVeyor
+<img src="Assets/ss4.jpg" alt="hi" class="inline">
 
-Once done, let's start with the General section. Here you can set up the build version and in which branch you want to make the build, even though there are another settings. **REMEMBER TO ALWAYS GO TO THE BOTTOM OF THE SECTION AND CLICK ON THE SAVE BUTTON. IF NOT, THE CHANGES WILL NOT APPLY**.
+Let's start with the General section. Here you can set up the build version and in which branch you want to make the build, even though there are another settings. **REMEMBER TO ALWAYS GO TO THE BOTTOM OF THE SECTION AND CLICK ON THE SAVE BUTTON. IF NOT, THE CHANGES WILL NOT APPLY**.
+
+<img src="Assets/ss5.jpg" alt="hi" class="inline">
 
 The next section is Environment, where you have to select the version of Visual Studio that you are using.
 
-The next important setting is found in Environment where you have to select which Visual Studio version are you using.
+<img src="Assets/ss6.jpg" alt="hi" class="inline">
 
-hi
+Let's continue with the Build section, where you will have to click on the "Project default" button below Configuration. You will need to type Debug and Release, because you want AppVeyor to do it for both configurations.
+
+<img src="Assets/ss7.jpg" alt="hi" class="inline">
+
+<img src="Assets/ss8.jpg" alt="hi" class="inline">
+
+In the next section, Artifacts, you will need to add a new artifact, that is the file of the release. Is for what we are here now. So AppVeyor will ask you for 3 things: The path to the Game folder, the name of the artifact and the type. The first one is up to your project, so, write it down under your responsability. The name of the artifact can be whatever you want, the release zip file will have this name. On the type put "Web Deploy Package".
+
+
 
 Another relevant option is that one that uploads the build done to our GitHub releases page. It is found in Deployment and is need to change the deployment provider to GitHub Releases. It is recommended to add a Release description and mark the Draft Release to avoid having all the releases you made there. But before all of that is needed an authentication from GitHub to let AppVeyor modify our repository. It is done through a GitHub authentication token.
 
